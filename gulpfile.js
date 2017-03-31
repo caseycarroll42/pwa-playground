@@ -4,6 +4,8 @@ var path = require('path')
 var swPrecache = require('sw-precache')
 var express = require('express')
 var packageJson = require('./package.json')
+var ghPages = require('gh-pages')
+var runSequence = require('run-sequence')
 
 var ROOT_DIR = 'app'
 var port = 3030
@@ -58,3 +60,6 @@ gulp.task('serve', ['generate-service-worker'], function(callback) {
     })
 })
 
+gulp.task('gh-pages', ['build'], function(callback) {
+  ghPages.publish(path.join(__dirname, 'app'), callback)
+})
