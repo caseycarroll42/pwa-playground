@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PWA-Playground</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>            
+                <p>Welcome to...</p>                         
+                <h1>the PWA-Playground 🎉 </h1>
+            </header>
+
+            <div class="about">
+                <h2>About</h2>
+                <p>Don't let the simple look of this site fool you. Under the hood, it's doing something really neat.</p>
+                <p>A Service Worker is running to make this site work offline!</p>
+                <p>If you shut down the server that's serving up this site and refresh the page, you won't see the offline downasour. You'll remain connected to the site because a service worker is picking up the slack and serving the static files from the cache to you.</p>
+            </div>
+            <img class="sw-example" src="images/sw-cachefirst.png" alt="Diagram of Cache-First paradigm">
+        </div>        
+        
+        <script src="js/service-worker-registration.js"></script>
+    </body>
+</html>
