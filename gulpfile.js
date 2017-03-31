@@ -52,7 +52,7 @@ gulp.task('serve', ['generate-service-worker'], function(callback) {
     app.use(express.static(ROOT_DIR))    
 
     var server = app.listen(port, function() {
-        var host = server.address().address
+        var host = "localhost"
         var port = server.address().port
         console.log('Server running at http://%s:%s', host, port)
     })

@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["images/sw-cachefirst.png","413dc95b30930bf184a30bf77026b601"],["index.html","ab8aabc2b2567891bdc4a4cc34569aac"],["js/service-worker-registration.js","0b4c35226075896152de214f8860b76e"],["styles/style.css","889aa1eae02492526167b50e134b493c"]];
+var precacheConfig = [["images/sw-cachefirst.png","413dc95b30930bf184a30bf77026b601"],["index.html","d4ea063037ca61693753adafe201fcd6"],["js/service-worker-registration.js","0b4c35226075896152de214f8860b76e"],["styles/style.css","9f948ffc849888413ce125762782d791"]];
 var cacheName = 'sw-precache-v3-pwa-playground-' + (self.registration ? self.registration.scope : '');
 
 
