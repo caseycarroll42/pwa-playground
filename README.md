@@ -1,5 +1,5 @@
 # PWA Playground 🎉
-A repo for experimenting with progressive web app practices
+A repo for experimenting with progressive enhancements
 
 ## sw-precache
 This site has sw-precache set up in its build process to implement best practices for caching static assets. 
