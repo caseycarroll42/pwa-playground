@@ -6,7 +6,8 @@
   "author": "caseycarroll42 <aiyakc@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
