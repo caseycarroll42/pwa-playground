@@ -6,6 +6,7 @@ var express = require('express')
 var packageJson = require('./package.json')
 var ghPages = require('gh-pages')
 var runSequence = require('run-sequence')
+var nodemon = require('nodemon')
 
 var ROOT_DIR = 'app'
 var port = 3030
@@ -48,15 +49,8 @@ gulp.task('build', function(callback) {
 })
 
 gulp.task('serve', ['generate-service-worker'], function(callback) {
-    var app = express();
-    
-
-    app.use(express.static(ROOT_DIR))    
-
-    var server = app.listen(port, function() {
-        var host = "localhost"
-        var port = server.address().port
-        console.log('Server running at http://%s:%s', host, port)
+    nodemon({
+      script: 'index.js'
     })
 })
 
