@@ -5,7 +5,7 @@ class StoriesList extends HTMLElement {
 	constructor() {
 		super()
 
-		this.stories = null
+		this.stories = "test"
 		
 		//create a shadow root with open encapsulation
 		this.shadow = this.attachShadow({mode: 'open'})
@@ -14,32 +14,31 @@ class StoriesList extends HTMLElement {
 		var dummyText = document.createElement('span')
 		dummyText.textContent = "I'm alive!!!"
 		this.shadow.appendChild(dummyText)
+
+		let storyList = document.createElement('ol')
+		storyList.id = "stories-list"
+		this.shadow.appendChild(storyList)
 	}
 
 	//query stories from mongodb
 	_fetchStories() {
-		var fetched_stories;
+
 		fetch('/stories').then(
 			response => {
-				response.json().then(
-					data => {
-						console.log(data)
-					})
+				return response.json()
+			}).then(
+			stories => {
+				var storyList = this.shadow.querySelector("#stories-list")
+				stories.forEach(function(story) {
+					var story_entry = document.createElement('li')
+					story_entry.innerHTML = JSON.stringify(story.a)
+					storyList.appendChild(story_entry)
+				}, this);
 			})
 	}
 
 	connectedCallback() {
 		this._fetchStories()
-		
-		let storyList = document.createElement('ol')
-		storyList.id = "stories-list"
-		this.shadow.appendChild(storyList)
-
-		// this.stories.forEach(function(storyData) {
-		// 	let story = document.createElement('li')
-		// 	story.innerHTML = storyData
-		// 	storyList.appendChild(story)
-		// }, this);
 	}
 }
 
