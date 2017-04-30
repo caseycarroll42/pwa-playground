@@ -4,16 +4,10 @@ class StoriesList extends HTMLElement {
 
 	constructor() {
 		super()
+		this.stories = null
 
-		this.stories = "test"
-		
 		//create a shadow root with open encapsulation
 		this.shadow = this.attachShadow({mode: 'open'})
-		
-		//dummy code to show element works
-		var dummyText = document.createElement('span')
-		dummyText.textContent = "I'm alive!!!"
-		this.shadow.appendChild(dummyText)
 
 		let storyList = document.createElement('ol')
 		storyList.id = "stories-list"
@@ -22,12 +16,12 @@ class StoriesList extends HTMLElement {
 
 	//query stories from mongodb
 	_fetchStories() {
-
 		fetch('/stories').then(
 			response => {
 				return response.json()
 			}).then(
 			stories => {
+				this.stories = stories
 				var storyList = this.shadow.querySelector("#stories-list")
 				stories.forEach(function(story) {
 					var story_entry = document.createElement('li')
