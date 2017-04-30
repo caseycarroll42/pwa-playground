@@ -12,6 +12,7 @@ class StoriesList extends HTMLElement {
 		let storyList = document.createElement('ol')
 		storyList.id = "stories-list"
 		this.shadow.appendChild(storyList)
+		this.addEventListener('filter-changed', this.onFilterChanged)
 	}
 
 	//query stories from mongodb
@@ -29,6 +30,10 @@ class StoriesList extends HTMLElement {
 					storyList.appendChild(story_entry)
 				}, this);
 			})
+	}
+
+	onFilterChanged(query) {
+		console.log(query)
 	}
 
 	connectedCallback() {
