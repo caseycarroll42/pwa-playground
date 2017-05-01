@@ -18,13 +18,13 @@ gulp.task('generate-service-worker', function(callback) {
     handleFetch: true,
     runtimeCaching: [{
       // See https://github.com/GoogleChrome/sw-toolbox#methods
-      urlPattern: /runtime-caching/,
-      handler: 'cacheFirst',
+      urlPattern: /stories/,
+      handler: 'networkFirst',
       // See https://github.com/GoogleChrome/sw-toolbox#options
       options: {
         cache: {
-          maxEntries: 1,
-          name: 'runtime-cache'
+          maxEntries: 15,
+          name: 'stories-cache'
         }
       }
     }],
@@ -32,7 +32,8 @@ gulp.task('generate-service-worker', function(callback) {
       ROOT_DIR + '/styles/**.css',
       ROOT_DIR + '/**.html',
       ROOT_DIR + '/images/**.*',
-      ROOT_DIR + '/js/**.js'
+      ROOT_DIR + '/js/**.js',
+      ROOT_DIR + '/components/**.js'
     ],
     stripPrefix: ROOT_DIR + '/',
     // verbose defaults to false, but for the purposes of this demo, log more.

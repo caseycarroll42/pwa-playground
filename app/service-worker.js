@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["images/sw-cachefirst.png","413dc95b30930bf184a30bf77026b601"],["index.html","2f5ec3e85aded233860e2d58a3931b83"],["js/service-worker-registration.js","0b4c35226075896152de214f8860b76e"],["styles/style.css","9f948ffc849888413ce125762782d791"]];
+var precacheConfig = [["components/search-bar.js","e9654cd3478f9db7135961c40f93af71"],["components/stories-list.js","1fc48e7b30f520d508fc0affc55ad978"],["images/sw-cachefirst.png","413dc95b30930bf184a30bf77026b601"],["index.html","a491c663a67329d9f177e18e7e085051"],["js/service-worker-registration.js","0b4c35226075896152de214f8860b76e"],["styles/style.css","c12ac76f654a94919c84536237868fc4"]];
 var cacheName = 'sw-precache-v3-pwa-playground-' + (self.registration ? self.registration.scope : '');
 
 
@@ -283,7 +283,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/runtime-caching/, toolbox.cacheFirst, {"cache":{"maxEntries":1,"name":"runtime-cache"}});
+toolbox.router.get(/stories/, toolbox.networkFirst, {"cache":{"maxEntries":15,"name":"stories-cache"}});
 
 
 
