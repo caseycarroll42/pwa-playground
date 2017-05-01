@@ -9,6 +9,7 @@ class SearchBar extends HTMLElement {
 		searchInput.id = "stories-filter"
 		searchInput.placeholder = "Search"
 		searchInput.setAttribute("role", "search")
+		searchInput.setAttribute("aria-label", "filter stories")
 		this.appendChild(searchInput)
 		
 		var storiesList = document.querySelector('stories-list')

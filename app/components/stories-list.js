@@ -9,6 +9,9 @@ class StoriesList extends HTMLElement {
 
 		//create a shadow root with open encapsulation
 		this.shadow = this.attachShadow({mode: 'open'})
+		this.shadow.innerHTML = '<style>' +
+		'ol { list-style-type:none }' +
+		'</style>';
 
 		let storyList = document.createElement('ol')
 		storyList.id = "stories-list"
