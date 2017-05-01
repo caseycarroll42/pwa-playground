@@ -12,10 +12,9 @@ class SearchBar extends HTMLElement {
 		searchInput.setAttribute("role", "search")
 		this.appendChild(searchInput)
 		
-		var changeFilterEvent = new Event('filter-changed');
 		var storiesList = document.querySelector('stories-list')
 		searchInput.addEventListener('input', event => {
-			console.log(event.target.value)
+			let changeFilterEvent = new CustomEvent('filter-changed', {'detail': event.target.value});
 			storiesList.dispatchEvent(changeFilterEvent)
 		})
 	}
