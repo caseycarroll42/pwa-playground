@@ -21,7 +21,7 @@ This allows the user to install the website to their homescreen as if it were a 
 
 To learn more about the web app manifest, check out [Matt Guant and Paul Kinlan's article on Google's Web Fundamentals site](https://www.youtube.com/watch?v=Z4nxxThIDVk). 
 
-###Custom Web Components
+### Custom Web Components
 The search bar and list of stories are custom web components. Each component has its own HTML element tag. 
 
 When the user types into the search bar, the stories list is filtered on the fly. The example is simple, but flexible.
