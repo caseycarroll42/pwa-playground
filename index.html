@@ -4,6 +4,7 @@
         <title>PWA-Playground</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="/manifest.json">
         <link href="styles/style.css" rel="stylesheet">
     </head>
     <body>
@@ -13,15 +14,24 @@
                 <h1>the PWA-Playground 🎉 </h1>
             </header>
 
-            <div class="about">
+            <div class="about" role="region" aria-label="about">
                 <h2>About</h2>
                 <p>Don't let the simple look of this site fool you. Under the hood, it's doing something really neat.</p>
                 <p>A Service Worker is running to make this site work offline!</p>
                 <p>If you turn on airplane mode and refresh the page, you won't see the offline downasour. You'll remain connected to the site because a service worker is picking up the slack and serving the static files from your cache to you.</p>
             </div>
+            
             <img class="sw-example" src="images/sw-cachefirst.png" alt="Diagram of Cache-First paradigm">
-        </div>        
-        
+        </div>
+
+        <div class="stories-demo" role="region" aria-label="stories demo">
+                <h2>Stories</h2>
+                <p>Two custom web components interacting with each other. The &ltsearch-bar&gt filters the &ltstories-list&gt.</p>
+                <search-bar></search-bar>
+                <stories-list></stories-list>
+        </div>
+        <script src="components/stories-list.js"></script>
+        <script src="components/search-bar.js"></script>
         <script src="js/service-worker-registration.js"></script>
     </body>
 </html>
