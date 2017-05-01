@@ -5,7 +5,6 @@ class SearchBar extends HTMLElement {
 	constructor() {
 		super()
 
-		//this.shadow = this.attachShadow({mode: 'open'})
 		var searchInput = document.createElement('input')
 		searchInput.id = "stories-filter"
 		searchInput.placeholder = "Search"

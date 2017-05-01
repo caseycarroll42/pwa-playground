@@ -31,11 +31,8 @@ class StoriesList extends HTMLElement {
 	onFilterChanged(query) {
 		let searchVal = query.detail
 
-		//if(searchVal == '') this.filteredStories = []
-
 		this.stories.forEach(function(story) {
 			let storyTitle = JSON.stringify(story.a)
-			console.log(storyTitle)
 			//if we find a matching story
 			if(storyTitle.indexOf(searchVal) != -1) {
 				//check to make sure story isn't already in the list
@@ -69,7 +66,6 @@ class StoriesList extends HTMLElement {
 	}
 
 	_updateStoriesList() {
-		console.log(this.filteredStories)
 		var storyList = this.shadow.querySelector("#stories-list")
 		var range = document.createRange();
     	range.selectNodeContents(storyList);
