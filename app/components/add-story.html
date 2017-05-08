@@ -1,10 +1,28 @@
 <template id="add-story">
-	<form action="/postStory">
+	<style>
+	input {
+		margin-top: 0px;
+	}
+
+	h3 {
+		font-weight: 200;
+		margin-bottom: 3px;
+	}
+
+	#submit-story {
+		margin-top: 3px;
+		background-color: white;
+	}
+
+	</style>
+	<form action="/postStory" id="story-form" method="post">
 		<h3 id="title-label">Title</h3>
-		<input type="text" name="storytitle" aria-describedby="title-label">
-		<h3 id="desc-label">Description</h3>
-		<input type="text" name="description" aria-describedby="desc-label">
+		<input type="text" name="storytitle" aria-labelledby="title-label">
 	</form>
+	<h3 id="desc-label">Description</h3>
+	<textarea form="story-form" name="description" aria-labelledby="desc-label"></textarea>
+	<br>
+	<button id="submit-story" type="submit" form="story-form">Post to Transect</button>
 </template>
 
 <script>
@@ -16,10 +34,6 @@
 			const template = currentDoc.querySelector('#add-story')
 			const instance = template.content.cloneNode(true)
 			shadow.appendChild(instance)
-		}
-
-		connectedCallback() {
-
 		}
 	})
 </script>
