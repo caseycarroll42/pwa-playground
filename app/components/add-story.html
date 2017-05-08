@@ -15,14 +15,15 @@
 	}
 
 	</style>
-	<form action="/postStory" id="story-form" method="post">
+	<form action="/postStory" id="story-form" method="post" aria-label="Post a story">
 		<h3 id="title-label">Title</h3>
-		<input type="text" name="storytitle" aria-labelledby="title-label">
+		<input type="text" name="title" aria-labelledby="title-label">
 	</form>
 	<h3 id="desc-label">Description</h3>
-	<textarea form="story-form" name="description" aria-labelledby="desc-label"></textarea>
+	<textarea form="story-form" name="desc" aria-labelledby="desc-label"></textarea>
 	<br>
 	<button id="submit-story" type="submit" form="story-form">Post to Transect</button>
+
 </template>
 
 <script>
