@@ -1,0 +1,25 @@
+<template id="add-story">
+	<form action="/postStory">
+		<h3 id="title-label">Title</h3>
+		<input type="text" name="storytitle" aria-describedby="title-label">
+		<h3 id="desc-label">Description</h3>
+		<input type="text" name="description" aria-describedby="desc-label">
+	</form>
+</template>
+
+<script>
+	customElements.define('add-story', class extends HTMLElement {
+		constructor() {
+			super()
+			var currentDoc = document.currentScript.ownerDocument;
+			let shadow = this.attachShadow({mode: "open"})
+			const template = currentDoc.querySelector('#add-story')
+			const instance = template.content.cloneNode(true)
+			shadow.appendChild(instance)
+		}
+
+		connectedCallback() {
+
+		}
+	})
+</script>
