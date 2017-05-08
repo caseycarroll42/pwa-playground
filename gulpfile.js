@@ -33,7 +33,8 @@ gulp.task('generate-service-worker', function(callback) {
       ROOT_DIR + '/**.html',
       ROOT_DIR + '/images/**.*',
       ROOT_DIR + '/js/**.js',
-      ROOT_DIR + '/components/**.js'
+      ROOT_DIR + '/components/**.js',
+      ROOT_DIR + '/components/**.html'
     ],
     stripPrefix: ROOT_DIR + '/',
     // verbose defaults to false, but for the purposes of this demo, log more.
