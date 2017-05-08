@@ -25,3 +25,8 @@ app.get('/stories', function(req, res) {
 		res.send(result)
 	})
 })
+
+app.post('/postStory', function(req, res) {
+	console.log("received post!")
+	res.send("posting is under construction")
+})
