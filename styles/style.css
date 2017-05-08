@@ -45,6 +45,11 @@ h2 {
     height: 30vh;
 }
 
+.post-story {
+    background-color: #69F0AE;
+    padding: 32px;
+}
+
 search-bar > #stories-filter {
     width: 80%;
     max-width: 250px;

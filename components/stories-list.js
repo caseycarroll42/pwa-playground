@@ -11,6 +11,7 @@ class StoriesList extends HTMLElement {
 		this.shadow = this.attachShadow({mode: 'open'})
 		this.shadow.innerHTML = '<style>' +
 		'ol { list-style-type:none }' +
+		'li { background-color: white; padding: 8px; border-style: solid; border-top-style: none; border-right-style: none; border-left-style: none; border-bottom: thin solid rgba(12, 12, 12, 0.16); }' +
 		'</style>';
 
 		let storyList = document.createElement('ol')
@@ -35,7 +36,7 @@ class StoriesList extends HTMLElement {
 		let searchVal = query.detail
 
 		this.stories.forEach(function(story) {
-			let storyTitle = JSON.stringify(story.a)
+			let storyTitle = JSON.stringify(story.title)
 			//if we find a matching story
 			if(storyTitle.indexOf(searchVal) != -1) {
 				//check to make sure story isn't already in the list
@@ -62,9 +63,8 @@ class StoriesList extends HTMLElement {
 		var storyList = this.shadow.querySelector('#stories-list')
 		this.stories.forEach(function(story) {
 			var story_entry = document.createElement('li')
-			story_entry.innerHTML = JSON.stringify(story.a)
+			story_entry.innerHTML = JSON.stringify(story.title)
 			storyList.appendChild(story_entry)
-			storyList.remov
 		}, this);
 	}
 
@@ -76,9 +76,8 @@ class StoriesList extends HTMLElement {
 
 		this.filteredStories.forEach(function(story) {
 			var story_entry = document.createElement('li')
-			story_entry.innerHTML = JSON.stringify(story.a)
+			story_entry.innerHTML = JSON.stringify(story.title)
 			storyList.appendChild(story_entry)
-			storyList.remov
 		}, this);
 	}
 }
