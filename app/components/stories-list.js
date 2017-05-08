@@ -10,7 +10,8 @@ class StoriesList extends HTMLElement {
 		//create a shadow root with open encapsulation
 		this.shadow = this.attachShadow({mode: 'open'})
 		this.shadow.innerHTML = '<style>' +
-		'ol { list-style-type:none }' +
+		'ol { list-style-type:none; padding-left: 0px; }' +
+		'li { background-color: white; padding: 8px; border-style: solid; border-top-style: none; border-right-style: none; border-left-style: none; border-bottom: thin solid rgba(12, 12, 12, 0.16); }' +
 		'</style>';
 
 		let storyList = document.createElement('ol')
