@@ -4,12 +4,10 @@
         <title>PWA-Playground</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#9c27b0">
         <link rel="manifest" href="/manifest.json">
-        <link rel="preload" as="script" href="components/stories-list.js">
-        <link rel="preload" as="script" href="components/search-bar.js">
-        <link rel="preload" as="image" href="images/sw-cachefirst.png">
-        <link rel="import" href="components/add-story.html">
         <link href="styles/style.css" rel="stylesheet">
+        <link rel="import" href="components/add-story.html">
     </head>
     <body>
         <div class="wrapper">
@@ -25,19 +23,20 @@
                 <p>If you turn on airplane mode and refresh the page, you won't see the offline downasour. You'll remain connected to the site because a service worker is picking up the slack and serving the static files from your cache to you.</p>
             </div>
             
-            <img class="sw-example" src="images/sw-cachefirst.png" alt="Diagram of Cache-First paradigm">
-        </div>
+            <img class="sw-example" src="images/webp-sw-cachefirst.webp" alt="Diagram of Cache-First paradigm">
 
-        <div class="post-story" role="region" aria-label="post a story">
-            <h2>Post a Story</h2>
-            <add-story></add-story>
-        </div>
+            <div class="post-story" role="region" aria-label="post a story">
+                <h2>Post a Story</h2>
+                <p>This is an example showing that our mongodb database can receive new stories.</p>
+                <add-story></add-story>
+            </div>
 
-        <div class="stories-demo" role="region" aria-label="stories demo">
-                <h2>Stories</h2>
-                <p>Two custom web components interacting with each other. The &ltsearch-bar&gt filters the &ltstories-list&gt.</p>
-                <search-bar></search-bar>
-                <stories-list></stories-list>
+            <div class="stories-demo" role="region" aria-label="stories demo">
+                    <h2>Stories</h2>
+                    <p>Two custom web components interacting with each other. The &ltsearch-bar&gt filters the &ltstories-list&gt.</p>
+                    <search-bar></search-bar>
+                    <stories-list></stories-list>
+            </div>
         </div>
         <script src="components/stories-list.js"></script>
         <script src="components/search-bar.js"></script>
