@@ -1,6 +1,6 @@
 {
   "name": "Progressive Web App Playground",
-  "short_name": "PWA Playground",
+  "short_name": "PWA Demo",
   "theme_color": "#9c27b0",
   "background_color": "#9c27b0",
   "display": "standalone",
